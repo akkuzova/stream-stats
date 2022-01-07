@@ -2,12 +2,12 @@
 
 ## Stream stats test assignment
 
-###Stack
+### Stack
 Deployed and built with Heroku
 
 PHP 8.1, Laravel Framework 8, MySql 8 (5.6.50-log on heroku deployment)
 
-##Description and code placement
+## Description and code placement
 
 All statistics are retrieving from [DashboardController](https://github.com/akkuzova/stream-stats/blob/main/app/Http/Controllers/DashboardController.php)
 using [UserStatsService](https://github.com/akkuzova/stream-stats/blob/main/app/Services/UserStatsService.php) and [Stream Model](https://github.com/akkuzova/stream-stats/blob/main/app/Models/Stream.php)
@@ -26,7 +26,7 @@ Once you are logged in with Twitch (used Socialite in [AuthController](https://g
     - How many viewers does the lowest viewer count stream that the logged-in user is following need to gain in order to make it into the top 1000
     - Which tags are shared between the user followed streams and the top 1000 streams
 
-##Other
+## Other
 
 - session expire after a 1 hour
   - used a SESSION_LIFETIME const for it [here](https://github.com/akkuzova/stream-stats/blob/main/config/session.php#L34)
