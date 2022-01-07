@@ -8,7 +8,7 @@
         </tr>
         @foreach($streams as $key => $value)
             <tr>
-                <td>{{$key}}</td>
+                <td>{{date("Y-m-d H:i:s", $key)}}</td>
                 <td>{{count($value)}}</td>
             </tr>
         @endforeach

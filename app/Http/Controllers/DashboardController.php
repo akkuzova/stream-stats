@@ -52,7 +52,7 @@ class DashboardController extends BaseController
 
         $streams = Stream::getStreamsByViewerCount();
         if ($orderBy === 'asc') {
-            asort($streams);
+            $streams = array_reverse($streams);
         }
 
         return view('dashboard.top-streams-by-viewer', ['streams' => $streams, 'orderBy' => $orderBy]);
@@ -65,8 +65,10 @@ class DashboardController extends BaseController
 
         foreach ($streams as $stream) {
             $date = $this->roundToNearestHour($stream->started_at);
-            $streamsByDate[$date][] = $stream;
+            $streamsByDate[strtotime($date)][] = $stream;
         }
+
+        krsort($streamsByDate);
 
         return view('dashboard.streams-by-start-time', ['streams' => $streamsByDate]);
     }
