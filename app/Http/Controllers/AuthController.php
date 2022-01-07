@@ -18,7 +18,9 @@ class AuthController extends BaseController
 
     public function redirect(): RedirectResponse
     {
-        return Socialite::driver('twitch')->redirect();
+        return Socialite::driver('twitch')
+            ->scopes(['user:read:follows'])
+            ->redirect();
     }
 
     public function callback(): RedirectResponse
