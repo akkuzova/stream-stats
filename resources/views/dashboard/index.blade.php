@@ -8,26 +8,31 @@
                 Median number of viewers for all streams
             </th>
             <td>
-                100
+                {{$median}}
             </td>
         </tr>
         <tr>
             <th>
-                Total number of streams by their start time (rounded to the nearest hour)
+                The lowest viewer count stream you are following
             </th>
             <td>
-
-
+                {{$lowestStream}}
             </td>
         </tr>
         <tr>
             <th>
-                Which tags are shared between the user followed streams and the top 1000 streams? Also make sure to
-                translate the tags to their respective name?
-
+                The number of viewers {{$lowestStream}} need to gain in order to make it into the top 1000
             </th>
             <td>
-
+                {{$number}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Tags you are shared with the top 1000 streams
+            </th>
+            <td>
+                {{$median}}
             </td>
         </tr>
     </table>

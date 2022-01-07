@@ -18,9 +18,10 @@ class CreateStreamsTable extends Migration
             $table->string('channel_name');
             $table->string('stream_title');
             $table->string('game_name');
-            $table->string('viewers_number');
+            $table->string('viewer_count');
             $table->dateTime('started_at');
             $table->json('tags');
+            $table->string('twitch_id');
             $table->timestamps();
         });
     }

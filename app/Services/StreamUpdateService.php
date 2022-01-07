@@ -6,14 +6,14 @@ use App\Models\Stream;
 
 class StreamUpdateService
 {
-    protected TwitchApiService $apiService;
+    protected TwitchAppApiService $apiService;
 
     public const OFFSET = 100;
     public const COUNT = 1000;
 
     protected array $streams = [];
 
-    public function __construct(TwitchApiService $apiService)
+    public function __construct(TwitchAppApiService $apiService)
     {
         $this->apiService = $apiService;
     }
@@ -49,9 +49,10 @@ class StreamUpdateService
                 'channel_name' => $item['user_name'],
                 'stream_title' => $item['title'],
                 'game_name' => $item['game_name'],
-                'viewers_number' => $item['viewer_count'],
+                'viewer_count' => $item['viewer_count'],
                 'started_at' => date_create($item['started_at']),
                 'tags' => json_encode($item['tag_ids']),
+                'twitch_id' =>  $item['id'],
             ];
         }
     }

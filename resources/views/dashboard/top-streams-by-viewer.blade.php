@@ -23,7 +23,7 @@
         @foreach($streams as $stream)
             <tr>
                 <td>{{$stream['stream_title']}}</td>
-                <td>{{$stream['viewers_number']}}</td>
+                <td>{{$stream['viewer_count']}}</td>
             </tr>
         @endforeach
     </table>
