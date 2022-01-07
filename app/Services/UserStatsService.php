@@ -20,7 +20,7 @@ class UserStatsService
             return $a['viewer_count'] <=> $b['viewer_count'];
         });
 
-        return head($streams);
+        return head($streams) ?: [];
     }
 
     public function getFollowingWithTopStreamsIntersection(): array
