@@ -3,8 +3,8 @@
     <table>
         <caption>Total number of streams by their start time</caption>
         <tr>
-            <th>Total number of streams</th>
             <th>Start time</th>
+            <th>Total number of streams</th>
         </tr>
         @foreach($streams as $key => $value)
             <tr>

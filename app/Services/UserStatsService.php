@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Stream;
+use Illuminate\Support\Facades\Log;
 
 class UserStatsService
 {
@@ -47,6 +48,10 @@ class UserStatsService
 
         foreach ($allStreams as $stream) {
             $tags = json_decode($stream['tags']);
+            if (!is_array($tags)) {
+                Log::error("Couldn't parse tags " . $stream['tags']);
+                $tags = [];
+            }
             foreach ($tags as $tag) {
                 if (isset($followedTags[$tag])) {
                     $intersection[$tag] = $followedTags[$tag];
