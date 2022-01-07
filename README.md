@@ -31,5 +31,5 @@ Once you are logged in with Twitch (used Socialite in [AuthController](https://g
 - session expire after a 1 hour
   - used a SESSION_LIFETIME const for it [here](https://github.com/akkuzova/stream-stats/blob/main/config/session.php#L34)
 - setup a cronjob that refreshed the stream's data every 15 minutes.
-  - Cron To Go Scheduler via Heroku used to set up a Laravel Task Scheduling to run every minute
+  - Cron To Go Scheduler on Heroku was used to set up a Laravel Task Scheduling to run every minute
 - used just a simple css in main.blade.php and blade templating for UX
