@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('twitch_id');
-            $table->string('email', 256)->unique();
+            $table->string('email', 64)->unique();
             $table->string('username');
             $table->string('twitch_token');
             $table->string('twitch_refresh_token');
