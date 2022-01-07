@@ -55,9 +55,16 @@ class Stream extends Model
             ->toArray();
     }
 
-    public static function getMedianNumberOfViewers(): int
+    public static function getMedianNumberOfViewers(): ?int
     {
         $streams = Stream::all();
         return $streams->median('viewer_count');
+    }
+
+    public static function getAllStreamTags(): array
+    {
+        return Stream::select('tags')
+            ->get()
+            ->toArray();
     }
 }

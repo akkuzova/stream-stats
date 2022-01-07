@@ -9,7 +9,7 @@
         @foreach($games as $game)
             <tr>
                 <td>{{$game['game_name']}}</td>
-                <td>{{$game['viewer_number']}}</td>
+                <td>{{$game['viewer_count']}}</td>
             </tr>
         @endforeach
     </table>

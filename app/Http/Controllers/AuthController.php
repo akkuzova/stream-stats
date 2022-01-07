@@ -26,7 +26,7 @@ class AuthController extends BaseController
     public function callback(): RedirectResponse
     {
         $twitchUser = Socialite::driver('twitch')->user();
-        $user = User::findOneByTwitchUser($twitchUser);
+        $user = User::findOneByTwitchUserId($twitchUser->getId());
         if ($user) {
             $user->update([
                 'twitch_token' => $twitchUser->token,

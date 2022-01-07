@@ -29,10 +29,18 @@
         </tr>
         <tr>
             <th>
-                Tags you are shared with the top 1000 streams
+                Tags you are shared with the top 1000 streams ({{count($tags)}})
             </th>
             <td>
-                {{$median}}
+                {{ implode(', ', $tags) }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Streams you are following from the top 1000 streams ({{count($streams)}})
+            </th>
+            <td>
+                {!!implode('<br/>', $streams)!!}
             </td>
         </tr>
     </table>

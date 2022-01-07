@@ -30,8 +30,11 @@ class StreamUpdateCommand extends Command
 
     public function handle(): int
     {
+        $this->info('Updating top streams started..');
+
         $this->streamUpdateService->update();
 
+        $this->info('Done');
         return 0;
     }
 }

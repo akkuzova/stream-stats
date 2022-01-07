@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(
                     ->name('games_by_viewer');
                 Route::get('top_streams_by_viewer', [DashboardController::class, 'getTop100StreamsByViewerCount'])
                     ->name('top_streams_by_viewer');
+                Route::get('top_streams_by_start_time', [DashboardController::class, 'getStreamsByStartTime'])
+                    ->name('top_streams_by_start_time');
             });
     }
 );

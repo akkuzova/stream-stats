@@ -35,8 +35,8 @@ class User extends Authenticatable
         'twitch_refresh_token',
     ];
 
-    public static function findOneByTwitchUser($twitchUser)
+    public static function findOneByTwitchUserId($twitchUserId)
     {
-        return User::where('twitch_id', $twitchUser->id)->first();
+        return User::where('twitch_id', $twitchUserId)->first();
     }
 }

@@ -69,7 +69,7 @@
         }
 
         nav a {
-            line-height: 20px;
+            line-height: 50px;
             height: 100%;
             font-size: 10px;
             display: inline-block;
@@ -145,7 +145,6 @@
 
         table caption {
             padding: .5em;
-            border: 1px solid #D2D2E6;
             font-size: 14pt;
         }
 
