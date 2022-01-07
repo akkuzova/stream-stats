@@ -58,7 +58,7 @@ class TwitchAppApiService
     protected function appendStreams(array $items)
     {
         foreach ($items as $item) {
-            $this->streams[] = [
+            $this->streams[$item['id']] = [
                 'channel_name' => $item['user_name'],
                 'stream_title' => $item['title'],
                 'game_name' => $item['game_name'],
