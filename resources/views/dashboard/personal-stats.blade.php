@@ -1,11 +1,8 @@
 @extends('main')
 
-@if Auth::hasUser()
 <h1>Hello, {{$user->username}}</h1>
-@endif
 
 @section('content')
-
     <table>
         <caption>Short statistic</caption>
         <tr>

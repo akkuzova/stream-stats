@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <div class="nav-container">
     <nav>
         <a href="{{ route('top_streams_by_viewer') }}"
