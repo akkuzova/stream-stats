@@ -20,7 +20,12 @@ class DashboardController extends BaseController
 
     public function index(): View
     {
-        list($lowestStreamName, $numberOfViewsNeeded) = $this->getNumberOfViewsNeeded();
+        return view('main');
+    }
+
+    public function getPersonalStats(): View
+    {
+        list($lowestStreamName, $numberOfViewsNeeded) = $this->propertiesService->getNumberOfViewsNeeded();
 
         $params = [
             'user' => Auth::user(),
@@ -31,12 +36,13 @@ class DashboardController extends BaseController
             'streams' => $this->propertiesService->getFollowingWithTopStreamsIntersection(),
         ];
 
-        return view('dashboard.index', $params);
+        return view('dashboard.personal-stats', $params);
     }
 
     public function getStreamCountByGame(): View
     {
         $games = Stream::getStreamCountByGame();
+
         return view('dashboard.streams-by-game', ['games' => $games]);
     }
 
@@ -85,19 +91,5 @@ class DashboardController extends BaseController
         }
 
         return date_format($dateRounded, "Y-m-d H:00:00");
-    }
-
-    protected function getNumberOfViewsNeeded(): array
-    {
-        $lowestStream = $this->propertiesService->getLowestViewersStreamFromFollowing();
-        $lowestStreamInTop = Stream::getStreamsByViewerCount(1, 'asc');
-        if (!empty($lowestStream) && !empty($lowestStreamInTop)) {
-            $lowestStreamName = $lowestStream['user_name'] . ' | ' . $lowestStream['game_name'];
-            $numberOfViewsNeeded = max(0, head($lowestStreamInTop)['viewer_count'] - $lowestStream['viewer_count'] + 1);
-        } else {
-            $lowestStreamName = 'Not available';
-            $numberOfViewsNeeded = -1;
-        }
-        return [$lowestStreamName, $numberOfViewsNeeded];
     }
 }
