@@ -43,12 +43,12 @@ class AuthController extends BaseController
         }
 
         Auth::login($user);
-        return redirect('/');
+        return redirect('/home')->with('success', 'Logged in successfully!');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/home')->with('success', 'Logged out successfully!');
     }
 }

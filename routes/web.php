@@ -8,10 +8,10 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
-    return redirect('dashboard/top_streams_by_viewer');
+    return redirect('home');
 });
 
-Route::get('dashboard',[DashboardController::class, 'index'])->name('dashboard');
+Route::get('home',[DashboardController::class, 'index'])->name('home');
 
 Route::prefix('twitch')->group(
     function () {
