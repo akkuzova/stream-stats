@@ -1,6 +1,11 @@
-@extends('dashboard.header')
+@extends('main')
+
+@if Auth::hasUser()
+<h1>Hello, {{$user->username}}</h1>
+@endif
+
 @section('content')
-    <h1>Hello, {{$user->username}}</h1>
+
     <table>
         <caption>Short statistic</caption>
         <tr>
@@ -45,3 +50,4 @@
         </tr>
     </table>
 @endsection
+

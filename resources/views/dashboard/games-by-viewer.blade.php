@@ -1,4 +1,4 @@
-@extends('dashboard.header')
+@extends('main')
 @section('content')
     <table>
         <caption>Top games by viewer count for each game</caption>

@@ -1,4 +1,4 @@
-@extends('dashboard.header')
+@extends('main')
 @section('content')
     <table>
         <caption>List of top 100 streams by viewer count that can be sorted asc & desc</caption>

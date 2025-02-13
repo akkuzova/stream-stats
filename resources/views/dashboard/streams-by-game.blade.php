@@ -1,4 +1,4 @@
-@extends('dashboard.header')
+@extends('main')
 @section('content')
     <table>
         <caption>Total number of streams for each game</caption>

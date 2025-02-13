@@ -22,10 +22,12 @@ body {
 }
 
 .btn-twitch {
-    border-radius: 8px;
+    border-radius: 3px;
     color: #FFFFFF;
     background-color: #9146FF;
     border-color: #9146FF;
+    height: 50px;
+    width: 130px;
     font-weight: bold;
     display: flex;
     flex-direction: row-reverse;
@@ -134,3 +136,4 @@ table td {
     padding: .5em;
     border: 1px solid #D2D2E6;
 }
+

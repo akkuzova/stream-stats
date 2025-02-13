@@ -76,4 +76,18 @@ class UserStatsService
         }
         return $tags;
     }
+
+    public function getNumberOfViewsNeeded(): array
+    {
+        $lowestStream = $this->getLowestViewersStreamFromFollowing();
+        $lowestStreamInTop = Stream::getStreamsByViewerCount(1, 'asc');
+        if (!empty($lowestStream) && !empty($lowestStreamInTop)) {
+            $lowestStreamName = $lowestStream['user_name'] . ' | ' . $lowestStream['game_name'];
+            $numberOfViewsNeeded = max(0, head($lowestStreamInTop)['viewer_count'] - $lowestStream['viewer_count'] + 1);
+        } else {
+            $lowestStreamName = 'Not available';
+            $numberOfViewsNeeded = -1;
+        }
+        return [$lowestStreamName, $numberOfViewsNeeded];
+    }
 }
