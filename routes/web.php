@@ -8,10 +8,8 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
-    return redirect('home');
+    return redirect('dashboard/top_streams_by_viewer');
 });
-
-Route::get('home',[DashboardController::class, 'index'])->name('home');
 
 Route::prefix('twitch')->group(
     function () {
@@ -22,11 +20,8 @@ Route::prefix('twitch')->group(
 
 Route::middleware(['auth'])->group(
     function () {
-        Route::prefix('dashboard')->group(
-            function () {
-                Route::get('personal_stats', [DashboardController::class, 'getPersonalStats'])
-                    ->name('personal_stats');
-            });
+        Route::get('home', [DashboardController::class, 'getPersonalStats'])
+            ->name('personal_stats');
     }
 );
 

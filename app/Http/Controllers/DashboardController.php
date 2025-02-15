@@ -18,11 +18,6 @@ class DashboardController extends BaseController
         $this->propertiesService = $propertiesService;
     }
 
-    public function index(): View
-    {
-        return view('main');
-    }
-
     public function getPersonalStats(): View
     {
         list($lowestStreamName, $numberOfViewsNeeded) = $this->propertiesService->getNumberOfViewsNeeded();
