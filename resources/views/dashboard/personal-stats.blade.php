@@ -1,9 +1,7 @@
 @extends('main')
-
-<h1>Hello, {{$user->username}}</h1>
-
 @section('content')
     <x-login-button/>
+    <h2>Hello, {{$user->username}}</h2>
     <table>
         <caption>Short statistic</caption>
         <tr>
